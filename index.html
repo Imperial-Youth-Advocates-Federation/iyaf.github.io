@@ -163,17 +163,228 @@ nav {
 .prog-list li::before { content:'✓'; color:var(--blue); font-weight:700; flex-shrink:0; }
 
 /* ===== TEAM PAGE ===== */
-#page-team { background:var(--white); }
-.team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:26px; max-width:900px; margin:0 auto; }
-.team-card { background:var(--white); border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.07); transition:all 0.4s; text-align:center; border:1px solid rgba(26,36,86,0.06); }
-.team-card:hover { transform:translateY(-8px); box-shadow:0 20px 50px rgba(26,36,86,0.14); }
-.team-photo { width:100%; height:240px; object-fit:cover; object-position:top; transition:transform 0.5s; }
-.team-card:hover .team-photo { transform:scale(1.05); }
-.team-info { padding:18px 20px; }
-.team-info h3 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--navy); font-weight:700; margin-bottom:6px; }
-.team-role { font-size:0.75rem; color:var(--blue); font-weight:600; letter-spacing:0.5px; text-transform:uppercase; background:var(--accent); padding:4px 12px; border-radius:50px; display:inline-block; }
-.team-placeholder { height:240px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; }
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+<style>
+    :root {
+        --primary-gold: #D4AF37;
+        --dark-blue: #002366;
+        --glass-white: rgba(255, 255, 255, 0.9);
+    }
+
+    .board-section {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--dark-blue);
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .board-container {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .member-card {
+        background: var(--glass-white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .member-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .image-container {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+    }
+
+    .image-container img {
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .member-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .member-info {
+        padding: 20px;
+    }
+
+    .member-name {
+        font-size: 1.4rem;
+        color: var(--dark-blue);
+        margin: 10px 0 5px 0;
+        font-weight: 700;
+    }
+
+    .member-role {
+        font-size: 1rem;
+        color: var(--primary-gold);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .divider {
+
+        width: 50px;
+        height: 3px;
+        background: var(--primary-gold);
+        margin: 15px auto;
+    }
+</style>
+
+<section class="board-section">
+    <h2 class="section-title" data-aos="fade-down">Our Executive Board</h2>
+    
+    <div class="board-container">
+        <div class="member-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="image-container">
+                <img src="85904.jpg" alt="Calvin Moyo">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Calvin Moyo</h3>
+                <p class="member-role">CEO / Founder</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="image-container">
+                <img src="85903.jpg" alt="Thomas Chingwaru">
+            </div>
+            <div class="member-info">
+
+                <h3 class="member-name">Thomas Chingwaru</h3>
+                <p class="member-role">CEO / Founder</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="image-container">
+                <img src="85720.jpg" alt="Josh Kamukapa">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Josh Kamukapa</h3>
+                <p class="member-role">Director</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="image-container">
+                <img src="85888.jpg" alt="Clayton Mapfurire">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Clayton Mapfurire</h3>
+                <p class="member-role">President</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="image-container">
+                <img src="85751.jpg" alt="Malcom Rusike">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Malcom Rusike</h3>
+                <p class="member-role">Vice President</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="image-container">
+                <img src="85866.jpg" alt="Faith Alumenda">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Faith Alumenda</h3>
+                <p class="member-role">Projects & Programmes Coordinator</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="image-container">
+                <img src="85669.jpg" alt="Walter Matarutse">
+
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Walter Matarutse</h3>
+                <p class="member-role">Public Relations Officer</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="image-container">
+                <img src="85688.jpg" alt="Mutsa Mashonga">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Mutsa Mashonga</h3>
+                <p class="member-role">Research & Policy Officer</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="image-container">
+                <img src="85704.jpg" alt="Munashe Kamuche">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Munashe Kamuche</h3>
+
+                <p class="member-role">IT & Technology Officer</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="image-container">
+                <img src="86423.jpg" alt="Elizabeth Mhlaba">
+            </div>
+            <div class="member-info">
+                <h3 class="member-name">Elizabeth Mhlaba</h3>
+                <p class="member-role">Secretary General</p>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Initialize Animations
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
 /* ===== IMPACT PAGE ===== */
 #page-impact { background:linear-gradient(135deg,#0d1530 0%,var(--navy) 100%); }
 .impact-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; margin-bottom:56px; }
